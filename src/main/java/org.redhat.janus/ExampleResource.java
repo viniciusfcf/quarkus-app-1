@@ -18,7 +18,7 @@ public class ExampleResource {
     @Path("novo")
     @Produces(MediaType.TEXT_PLAIN)
     public String hello2() {
-        return "Ola Janus";
+        return "Ola Janus 2";
     }
 
 }
