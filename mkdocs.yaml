@@ -1,0 +1,15 @@
+site_name: my-quarkus-app
+site_description: 
+repo_url: https://github.com/my-org-to-backstage/quarkus-app-1
+edit_uri: edit/main/docs
+
+plugins:
+  - techdocs-core
+
+# Note for content editors, edit only the section below
+nav:
+  - Onboard a developer to OpenShift: onboard-openshift.md
+  - Application Migration:
+      - Migration Process Overview: application-migration/migration-process-overview.md
+      - Migration Process Steps: application-migration/migration-process-steps.md
+      - Learning Path for Developers: application-migration/learning-path-for-developers.md
