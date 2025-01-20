@@ -36,27 +36,30 @@ components:
   - name: m2
     volume:
       size: 1G
-  - name: postgres-storage
-    volume:
-      size: 1G
-  - name: postgres
+  - name: microcks
     container:
-      image: docker.io/viniciusfcf/postgres
+      image: quay.io/microcks/microcks-uber:latest-native 
       endpoints:
-        - name: postgres
-          exposure: internal
-          targetPort: 5432
+        - name: microcks
+          exposure: public
+          targetPort: 8080
       memoryLimit: '512Mi'
       memoryRequest: '256Mi'
-      cpuLimit: '1'
+      cpuLimit: '0.5'
       cpuRequest: '0.25'
       mountSources: false
-      env:
-        - name: POSTGRES_PASSWORD
-          value: postgres
-      volumeMounts:
-        - name: postgres-storage
-          path: /var/lib/postgresql/data
+  - name: keycloak
+    container:
+      image: quay.io/keycloak/keycloak:26.1
+      endpoints:
+        - name: keycloak
+          exposure: public
+          targetPort: 8080
+      memoryLimit: '512Mi'
+      memoryRequest: '256Mi'
+      cpuLimit: '0.5'
+      cpuRequest: '0.25'
+      mountSources: false
 commands:
   - id: package
     exec:
