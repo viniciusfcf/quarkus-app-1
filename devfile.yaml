@@ -42,9 +42,7 @@ components:
       endpoints:
         - name: microcks
           exposure: public
-          targetPort: 8180
-      ports:
-      - 8180:8080
+          targetPort: 8080
       memoryLimit: '512Mi'
       memoryRequest: '256Mi'
       cpuLimit: '0.5'
@@ -56,9 +54,7 @@ components:
       endpoints:
         - name: keycloak
           exposure: public
-          targetPort: 8280
-      ports:
-      - 8280:8080
+          targetPort: 8080
       memoryLimit: '512Mi'
       memoryRequest: '256Mi'
       cpuLimit: '0.5'
