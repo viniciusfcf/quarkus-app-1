@@ -48,6 +48,9 @@ components:
       cpuLimit: '1'
       cpuRequest: '0.25'
       mountSources: false
+      env:
+        - name: POSTGRES_PASSWORD
+          value: postgres
       # volumeMounts:
       #   - name: mongo-storage
       #     path: /var/lib/mongodb/data
