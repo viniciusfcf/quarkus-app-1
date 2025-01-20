@@ -36,6 +36,9 @@ components:
   - name: m2
     volume:
       size: 1G
+  - name: postgres-storage
+    volume:
+      size: 1G
   - name: postgres
     container:
       image: docker.io/viniciusfcf/postgres
@@ -51,9 +54,9 @@ components:
       env:
         - name: POSTGRES_PASSWORD
           value: postgres
-      # volumeMounts:
-      #   - name: mongo-storage
-      #     path: /var/lib/mongodb/data
+      volumeMounts:
+        - name: postgres-storage
+          path: /var/lib/postgresql/data
 commands:
   - id: package
     exec:
