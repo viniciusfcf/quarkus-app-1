@@ -19,7 +19,7 @@ components:
           path: /home/user/.m2
       endpoints:
         - name: quarkus-development-server
-          targetPort: 8080
+          targetPort: 8180
           exposure: public
           secure: false
           protocol: http
@@ -39,10 +39,13 @@ components:
   - name: microcks
     container:
       image: quay.io/microcks/microcks-uber:latest-native 
+      env:
+        - name: MICROCKS_HOST_PORT
+          value: 8280
       endpoints:
         - name: microcks
           exposure: public
-          targetPort: 8080
+          targetPort: 8280
       memoryLimit: '512Mi'
       memoryRequest: '256Mi'
       cpuLimit: '0.5'
