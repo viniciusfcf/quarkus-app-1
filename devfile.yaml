@@ -46,6 +46,8 @@ components:
         - name: microcks
           exposure: public
           targetPort: 8280
+          secure: false
+          protocol: http
       memoryLimit: '512Mi'
       memoryRequest: '256Mi'
       cpuLimit: '0.5'
@@ -54,10 +56,13 @@ components:
   - name: keycloak
     container:
       image: quay.io/keycloak/keycloak:26.1
+      command: ['start-dev']
       endpoints:
         - name: keycloak
           exposure: public
           targetPort: 8080
+          secure: false
+          protocol: http
       memoryLimit: '512Mi'
       memoryRequest: '256Mi'
       cpuLimit: '0.5'
