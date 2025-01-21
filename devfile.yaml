@@ -53,21 +53,21 @@ components:
       cpuLimit: '0.5'
       cpuRequest: '0.25'
       mountSources: false
-  - name: keycloak
-    container:
-      image: quay.io/keycloak/keycloak:26.1
-      command: ['start-dev']
-      endpoints:
-        - name: keycloak
-          exposure: public
-          targetPort: 8080
-          secure: false
-          protocol: http
-      memoryLimit: '512Mi'
-      memoryRequest: '256Mi'
-      cpuLimit: '0.5'
-      cpuRequest: '0.25'
-      mountSources: false
+  # - name: keycloak
+  #   container:
+  #     image: quay.io/keycloak/keycloak:26.1
+  #     command: ['start-dev']
+  #     endpoints:
+  #       - name: keycloak
+  #         exposure: public
+  #         targetPort: 8080
+  #         secure: false
+  #         protocol: http
+  #     memoryLimit: '512Mi'
+  #     memoryRequest: '256Mi'
+  #     cpuLimit: '0.5'
+  #     cpuRequest: '0.25'
+  #     mountSources: false
 commands:
   - id: package
     exec:
