@@ -41,7 +41,7 @@ components:
       image: quay.io/microcks/microcks-uber:latest-native 
       env:
         - name: MICROCKS_HOST_PORT
-          value: 8280
+          value: '8280'
       endpoints:
         - name: microcks
           exposure: public
