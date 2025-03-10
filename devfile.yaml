@@ -16,7 +16,7 @@ components:
           value: "true"
         - value: /home/jboss/.m2
           name: MAVEN_CONFIG
-        - value: -Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G -Dmaven.repo.local=/home/user/.m2/repository
+        - value: "-Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G -Dmaven.repo.local=/home/user/.m2/repository"
           name: MAVEN_OPTS
         - name: KUBEDOCK_ENABLED
           value: 'true'
