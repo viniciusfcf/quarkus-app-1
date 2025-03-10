@@ -47,10 +47,11 @@ components:
           exposure: none
           secure: false
           protocol: tcp
-        - exposure: none
-          name: kubedock
-          protocol: tcp
+        - name: kubedock
           targetPort: 2475
+          exposure: none
+          secure: false
+          protocol: tcp
   - name: m2
     volume:
       size: 1G
