@@ -69,21 +69,6 @@ components:
       cpuLimit: '0.5'
       cpuRequest: '0.25'
       mountSources: false
-  # - name: keycloak
-  #   container:
-  #     image: quay.io/keycloak/keycloak:26.1
-  #     command: ['start-dev']
-  #     endpoints:
-  #       - name: keycloak
-  #         exposure: public
-  #         targetPort: 8080
-  #         secure: false
-  #         protocol: http
-  #     memoryLimit: '512Mi'
-  #     memoryRequest: '256Mi'
-  #     cpuLimit: '0.5'
-  #     cpuRequest: '0.25'
-  #     mountSources: false
 commands:
   - id: package
     exec:
@@ -101,3 +86,23 @@ commands:
       group:
         kind: run
         isDefault: true
+  - id: set-java-21-default
+    exec:
+      label: "Set default Java version to 21"
+      component: universal-container
+      commandLine: "sdk default java 21.0.6-tem"
+      workingDir: "/home/user"
+      group:
+        kind: build
+  - id: configure-quarkus-cli
+    exec:
+      label: "Configure Quarkus CLI"
+      component: universal-container
+      commandLine: "sdk install quarkus"
+      workingDir: "/home/user"
+      group:
+        kind: build
+events:
+  postStart:
+    - set-java-21-default
+    - configure-quarkus-cli
