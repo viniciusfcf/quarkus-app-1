@@ -102,7 +102,7 @@ commands:
       workingDir: "/home/user"
       group:
          kind: build
-events:
-  postStart:
-    # - set-java-21-default
-    - configure-quarkus-cli
+# events:
+#   postStart:
+#     - set-java-21-default
+#     - configure-quarkus-cli
