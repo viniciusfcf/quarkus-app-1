@@ -6,7 +6,7 @@ attributes:
 components:
   - name: development-tooling
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-0e189d9
+      image: quay.io/devfile/universal-developer-image:ubi9-9cc669d
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
@@ -32,6 +32,10 @@ components:
         - name: m2
           path: /home/user/.m2
       endpoints:
+        - exposure: none
+          name: kubedock
+          protocol: tcp
+          targetPort: 2475
         - name: quarkus-development-server
           targetPort: 8180
           exposure: public
