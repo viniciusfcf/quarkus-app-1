@@ -89,7 +89,7 @@ commands:
   - id: set-java-21-default
     exec:
       label: "Set default Java version to 21"
-      component: universal-container
+      component: development-tooling
       commandLine: "sdk default java 21.0.6-tem"
       workingDir: "/home/user"
       group:
@@ -97,7 +97,7 @@ commands:
   - id: configure-quarkus-cli
     exec:
       label: "Configure Quarkus CLI"
-      component: universal-container
+      component: development-tooling
       commandLine: "sdk install quarkus"
       workingDir: "/home/user"
       group:
