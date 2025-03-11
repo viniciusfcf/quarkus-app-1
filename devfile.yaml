@@ -101,8 +101,8 @@ commands:
       commandLine: "sdk install quarkus"
       workingDir: "/home/user"
       group:
-        kind: build
-events:
-  postStart:
-    - set-java-21-default
-    - configure-quarkus-cli
+         kind: build
+# events:
+#   postStart:
+#     - set-java-21-default
+#     - configure-quarkus-cli
