@@ -91,7 +91,7 @@ commands:
       label: "Set default Java version to 21"
       component: development-tooling
       commandLine: "sdk default java 21.0.5-tem"
-      #workingDir: "/home/user"
+      workingDir: "/home/user"
       group:
         kind: build
   - id: configure-quarkus-cli
@@ -99,10 +99,10 @@ commands:
       label: "Configure Quarkus CLI"
       component: development-tooling
       commandLine: "sdk install quarkus"
-      #workingDir: "/home/user"
+      workingDir: "/home/user"
       group:
          kind: build
 events:
-  postStart:
-    - set-java-21-default
+  postStart: []
+    #- set-java-21-default
     #- configure-quarkus-cli
