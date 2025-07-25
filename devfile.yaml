@@ -14,8 +14,8 @@ components:
           value: "--reverse-proxy --kubeconfig /home/user/.kube/config --initimage quay.io/agiertli/kubedock:0.13.0"
         - name: USE_JAVA21
           value: "true"
-        - value: -Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G
-          name: MAVEN_OPTS
+        - name: MAVEN_OPTS
+          value: -Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G
         - name: KUBEDOCK_ENABLED
           value: 'true'
         - name: DOCKER_HOST
@@ -91,7 +91,7 @@ commands:
       label: "Set default Java version to 21"
       component: development-tooling
       commandLine: "sdk default java 21.0.5-tem"
-      #workingDir: "/home/user"
+      workingDir: "/home/user"
       group:
         kind: build
   - id: configure-quarkus-cli
@@ -104,5 +104,5 @@ commands:
          kind: build
 events:
   postStart:
-    - set-java-21-default
-    #- configure-quarkus-cli
+    #- set-java-21-default
+    - configure-quarkus-cli
