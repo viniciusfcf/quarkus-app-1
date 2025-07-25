@@ -102,15 +102,5 @@ commands:
       workingDir: "/home/user"
       group:
          kind: build
-  - id: create-echo-file
-    exec:
-      label: "Echo"
-      component: development-tooling
-      commandLine: "echo oi > oi.txt"
-      workingDir: "/home/user"
-      group:
-         kind: build
 events:
-  postStart:
-    - create-echo-file
-    - configure-quarkus-cli
+  postStart: []
