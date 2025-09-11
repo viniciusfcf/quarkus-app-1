@@ -52,23 +52,23 @@ components:
   - name: m2
     volume:
       size: 1G
-  - name: microcks
-    container:
-      image: quay.io/microcks/microcks-uber:latest-native 
-      env:
-        - name: MICROCKS_HOST_PORT
-          value: '8280'
-      endpoints:
-        - name: microcks
-          exposure: public
-          targetPort: 8280
-          secure: false
-          protocol: http
-      memoryLimit: '512Mi'
-      memoryRequest: '256Mi'
-      cpuLimit: '0.5'
-      cpuRequest: '0.25'
-      mountSources: false
+  # - name: microcks
+  #   container:
+  #     image: quay.io/microcks/microcks-uber:latest-native 
+  #     env:
+  #       - name: MICROCKS_HOST_PORT
+  #         value: '8280'
+  #     endpoints:
+  #       - name: microcks
+  #         exposure: public
+  #         targetPort: 8280
+  #         secure: false
+  #         protocol: http
+  #     memoryLimit: '512Mi'
+  #     memoryRequest: '256Mi'
+  #     cpuLimit: '0.5'
+  #     cpuRequest: '0.25'
+  #     mountSources: false
 commands:
   - id: package
     exec:
