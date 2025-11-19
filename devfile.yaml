@@ -6,7 +6,7 @@ attributes:
 components:
   - name: development-tooling
     container:
-      image: quay.io/devfile/universal-developer-image:ubi9-9cc669d
+      image: quay.io/devfile/base-developer-image:ubi10-f1cf6ea
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
@@ -24,8 +24,10 @@ components:
           value: 'true'
         - name: TESTCONTAINERS_CHECKS_DISABLE
           value: 'true'
-      memoryLimit: 5Gi
-      cpuLimit: 1500m
+      cpuRequest: 500m
+      cpuLimit: 1000m
+      memoryRequest: 256Mi
+      memoryLimit: 4096Mi
       volumeMounts:
         - name: m2
           path: /home/user/.m2
