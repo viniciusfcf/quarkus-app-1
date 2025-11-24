@@ -6,7 +6,7 @@ attributes:
 components:
   - name: development-tooling
     container:
-      image: quay.io/devfile/base-developer-image:ubi10-f1cf6ea
+      image: quay.io/vflorent/devspaces-quarkus-vue:0.1
       env:
         - name: QUARKUS_HTTP_HOST
           value: 0.0.0.0
